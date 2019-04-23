@@ -4,9 +4,8 @@ package com.example.testtaskitunesapi.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.io.Serializable;
 
-public class Track implements Serializable {
+public class Track  {
 
     @SerializedName("wrapperType")
     @Expose
@@ -101,6 +100,9 @@ public class Track implements Serializable {
     @SerializedName("isStreamable")
     @Expose
     private Boolean isStreamable;
+
+    public Track() {
+    }
 
     public String getWrapperType() {
         return wrapperType;

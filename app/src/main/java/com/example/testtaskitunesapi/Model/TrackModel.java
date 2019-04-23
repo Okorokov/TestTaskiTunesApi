@@ -15,6 +15,9 @@ public class TrackModel {
     @Expose
     private List<Track> tracks = null;
 
+    public TrackModel() {
+    }
+
     public Integer getResultCount() {
         return resultCount;
     }
