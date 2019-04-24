@@ -1,11 +1,15 @@
 
 package com.example.testtaskitunesapi.Model;
 
+import android.support.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Comparator;
 
-public class Track  {
+
+public class Track  implements Comparable<Track> {
 
     @SerializedName("wrapperType")
     @Expose
@@ -102,6 +106,19 @@ public class Track  {
     private Boolean isStreamable;
 
     public Track() {
+    }
+
+
+    public static Comparator<Track> NameComparator = new Comparator<Track>() {
+
+        @Override
+        public int compare(Track e1, Track e2) {
+            return e1.getCollectionName().compareTo(e2.getCollectionName());
+        }
+    };
+    @Override
+    public int compareTo(@NonNull Track o) {
+        return 0;
     }
 
     public String getWrapperType() {
@@ -351,5 +368,6 @@ public class Track  {
     public void setIsStreamable(Boolean isStreamable) {
         this.isStreamable = isStreamable;
     }
+
 
 }
