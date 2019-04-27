@@ -55,15 +55,20 @@ public class TrackModel {
 
 
 
-    public Set<String> getCollectionName() {
+  /*  public Set<String> getCollectionName() {
+
         for(Track tr:tracks){
             collectionName.add(tr.getCollectionName());
         }
         return collectionName;
     }
-
+*/
     public List<AlbumModel> getAlbumModels() {
-
+       //albumModels=new ArrayList<>();
+        collectionName=new LinkedHashSet<String>();
+        for(Track tr:tracks){
+            collectionName.add(tr.getCollectionName());
+        }
         Iterator<String> itr = collectionName.iterator();
 
         while (itr.hasNext()) {
@@ -74,6 +79,8 @@ public class TrackModel {
                     albumModel.setArtistName(track.getArtistName());
                     albumModel.setArtworkUrl(track.getArtworkUrl100());
                     albumModel.setReleaseDate(track.getReleaseDate());
+                    albumModel.setCollectionPrice(String.valueOf(track.getCollectionPrice()));
+                    albumModel.setPrimaryGenreName(track.getPrimaryGenreName());
                     albumModel.setTracks(track);
 
                 }

@@ -8,5 +8,16 @@ public interface MainContract {
         void onStop();
         void onDestroy();
     }
+
     interface Repository {}
+
+    interface PlayListView {}
+    interface PlayListPresenter {
+        void onCreate();
+        void onStart();
+        void onStop();
+        void onDestroy();
+
+        void onPlay(String url);
+    }
 }

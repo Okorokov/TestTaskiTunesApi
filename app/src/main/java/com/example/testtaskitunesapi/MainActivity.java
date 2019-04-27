@@ -1,8 +1,8 @@
 package com.example.testtaskitunesapi;
 
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,12 +11,11 @@ import android.widget.Button;
 
 
 import com.example.testtaskitunesapi.Model.AlbumModel;
-import com.example.testtaskitunesapi.Model.Track;
 import com.example.testtaskitunesapi.Model.TrackModel;
 import com.example.testtaskitunesapi.Presenter.MainPresenter;
 import com.example.testtaskitunesapi.Retrofit.APIService;
 import com.example.testtaskitunesapi.Retrofit.RetrofitClient;
-import com.example.testtaskitunesapi.ViewHolder.AlbumAdapter;
+import com.example.testtaskitunesapi.Adapter.AlbumAdapter;
 import com.mancj.materialsearchbar.MaterialSearchBar;
 
 import java.util.ArrayList;
@@ -88,44 +87,22 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
                             .subscribe(new Consumer<TrackModel>() {
                                 @Override
                                 public void accept(TrackModel trackModel) throws Exception {
-
-                                    for(int i=0; i<=trackModel.getSize()-1; i++) {
-                                        Log.d(TAG, ":::  " + trackModel.getTracks().get(i).getCollectionName());
-                                    }
-                                    //for(String s: trackModel.getCollectionName()){
-                                        //Log.d(TAG, "---  " + s);
-                                   // }
-
-                                    Iterator<String> itr = trackModel.getCollectionName().iterator();
-                                    while (itr.hasNext()) {
-                                        Log.d(TAG, "---  " + itr.next());
-                                    }
-
-                                    //List<AlbumModel> albumModel=trackModel.getAlbumModels();
-                                    //Log.d(TAG, "albumModel:  " + albumModel.size());
-
+                                    Log.d(TAG, "trackModel  " + trackModel.getTracks().size());
                                     albumModels=trackModel.getAlbumModels();
                                     adapter = new AlbumAdapter(MainActivity.this, albumModels);
 
                                     if (adapter != null) {
                                         rvAlbum.setAdapter(adapter);
                                     }
-                                   /* for(AlbumModel albumModel:trackModel.getAlbumModels()){
+                                    Log.d(TAG, "albumModels  " + albumModels.size());
 
-                                        Log.d(TAG, "CollectionName:  " + albumModel.getCollectionName());
-                                        for(Track track:albumModel.getTracks()){
-                                            Log.d(TAG, "          : TrackName: " + track.getTrackName());
-                                        }
-                                    }
-                                    //rvAlbum.setAdapter(adapter);
-
-*/
                                 }
                             }, new Consumer<Throwable>() {
 
                                 @Override
                                 public void accept(Throwable throwable) throws Exception {
                                     Log.d(TAG, "mService " + throwable.getMessage());
+                                    Snackbar.make(rvAlbum,"Что то пошло не так!",Snackbar.LENGTH_SHORT).show();
                                 }
                             })
                     );
