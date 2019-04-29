@@ -1,17 +1,6 @@
 package com.example.testtaskitunesapi.Utils;
 
 public class Common {
-    /*    private String collectionName;
-    private String artistName;
-    private String releaseDate;
-    private String artworkUrl;
-    private Double collectionPrice;
-    private List<Track> tracks = new ArrayList<>();
-    private ArrayList<String> trackNames = new ArrayList<>();
-    private ArrayList<String> previewUrls = new ArrayList<>();
-    private ArrayList<String> trackTimeMillis = new ArrayList<>();
-    private ArrayList<String> trackPrices = new ArrayList<>();
-    private ArrayList<String> currencys = new ArrayList<>();*/
     public static final String MO_COLLECTIONAME = "collectionName";
     public static final String MO_ARTISTNAME = "artistName";
     public static final String MO_RELEASEDATE = "releaseDate";
@@ -24,9 +13,10 @@ public class Common {
     public static final String MO_TRACKPRICES = "trackPrices";
     public static final String MO_CURRENCYS = "currencys";
 
-
     public static final String MO_PRIMARYGENRENAME = "primaryGenreName";
     public static final String MO_TRACKNUMBER = "trackNumber";
     public static final String MO_ALBUMTIME = "albuntime";
     public static final String MO_TRACKCOUNT = "trackcounter";
+    public static final String BASE_URL = "https://itunes.apple.com/";
+    public static final String ERROR_MSG = "Что то пошло не так!";
 }

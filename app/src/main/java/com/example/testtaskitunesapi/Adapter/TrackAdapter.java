@@ -3,15 +3,10 @@ package com.example.testtaskitunesapi.Adapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import com.example.testtaskitunesapi.MainContract;
 import com.example.testtaskitunesapi.Model.Track;
 import com.example.testtaskitunesapi.R;
 import java.util.List;
@@ -20,13 +15,12 @@ public class TrackAdapter extends RecyclerView.Adapter<TrackAdapter.TrackViewHol
     private Context context;
     private LayoutInflater inflater;
     private List<Track> tracks;
-    private MainContract.PlayListPresenter mPresenter;
 
-    public TrackAdapter(Context context, List<Track> tracks,  MainContract.PlayListPresenter mPresenter) {
+
+    public TrackAdapter(Context context, List<Track> tracks) {
         this.context=context;
         this.tracks = tracks;
         this.inflater = LayoutInflater.from(context);
-        this.mPresenter=mPresenter;
     }
 
     @NonNull
@@ -76,7 +70,6 @@ public class TrackAdapter extends RecyclerView.Adapter<TrackAdapter.TrackViewHol
             tvTrackNumber = itemView.findViewById(R.id.tvTrackNumber);
             tvTrackPrice = itemView.findViewById(R.id.tvTrackPrice);
             tvCurrency = itemView.findViewById(R.id.tvCurrency);
-
         }
     }
 }

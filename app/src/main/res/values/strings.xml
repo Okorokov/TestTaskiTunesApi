@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">TestTaskiTunesApi</string>
     <string name="search_name">search_name</string>
+    <string name="btnName">Button</string>
+    <string name="msearchbar">Enter email</string>
+    <string name="trackcount">15</string>
+    <string name="sound">Songs</string>
+    <string name="collectionname">In Between Dreams (Bonus Track Version)</string>
+    <string name="artistname">Jack Johnson</string>
+    <string name="country">USA</string>
+    <string name="artnamesmoll">Jack Johnson</string>
 </resources>
