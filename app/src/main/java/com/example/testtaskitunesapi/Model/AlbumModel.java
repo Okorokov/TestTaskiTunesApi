@@ -13,12 +13,15 @@ public class AlbumModel {
     private String artworkUrl;
     private String collectionPrice;
     private String primaryGenreName;
+    private String trackCount;
     private List<Track> tracks = new ArrayList<>();
     private ArrayList<String> trackNames = new ArrayList<>();
     private ArrayList<String> previewUrls = new ArrayList<>();
     private ArrayList<String> trackTimeMillis = new ArrayList<>();
     private ArrayList<String> trackPrices = new ArrayList<>();
     private ArrayList<String> currencys = new ArrayList<>();
+    private ArrayList<String> trackNumber = new ArrayList<>();
+
 
     private List<Track> listtotracks = new ArrayList<>();
 
@@ -105,9 +108,12 @@ public class AlbumModel {
 
     public ArrayList<String> getTrackTimeMillis() {
         trackTimeMillis = new ArrayList<>();
+
         for(Track track:tracks){
             trackTimeMillis.add(String.valueOf(track.getTrackTimeMillis()));
+
         }
+
         return trackTimeMillis;
     }
 
@@ -157,6 +163,7 @@ public class AlbumModel {
             track.setTrackTimeMillis(Integer.valueOf(trackTimeMillis.get(i)));
             track.setTrackPrice(Double.valueOf(trackPrices.get(i)));
             track.setCurrency(currencys.get(i));
+            track.setTrackNumber(Integer.valueOf(trackNumber.get(i)));
             listtotracks.add(track);
         }
         return listtotracks;
@@ -169,4 +176,25 @@ public class AlbumModel {
     public void setPrimaryGenreName(String primaryGenreName) {
         this.primaryGenreName = primaryGenreName;
     }
+
+    public ArrayList<String> getTrackNumber() {
+        trackNumber = new ArrayList<>();
+        for(Track track:tracks){
+            trackNumber.add(String.valueOf(track.getTrackNumber()));
+        }
+        return trackNumber;
+    }
+
+    public void setTrackNumber(ArrayList<String> trackNumber) {
+        this.trackNumber = trackNumber;
+    }
+
+    public String getTrackCount() {
+        return trackCount;
+    }
+
+    public void setTrackCount(String trackCount) {
+        this.trackCount = trackCount;
+    }
+
 }

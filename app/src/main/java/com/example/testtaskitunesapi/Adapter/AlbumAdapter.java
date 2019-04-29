@@ -60,12 +60,17 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
                 detail.putExtra(Common.MO_ARTWORKURL,albumModels.get(i).getArtworkUrl());
                 detail.putExtra(Common.MO_COLLECTIONPRICE,albumModels.get(i).getCollectionPrice());
                 detail.putExtra(Common.MO_PRIMARYGENRENAME,albumModels.get(i).getPrimaryGenreName());
+                detail.putExtra(Common.MO_TRACKCOUNT,albumModels.get(i).getTrackCount());
+
 
                 detail.putStringArrayListExtra(Common.MO_TRACKMAMES, albumModels.get(i).getTrackNames());
                 detail.putStringArrayListExtra(Common.MO_PREVIEWURLS, albumModels.get(i).getPreviewUrls());
                 detail.putStringArrayListExtra(Common.MO_TRACKTIMEMILLIS, albumModels.get(i).getTrackTimeMillis());
                 detail.putStringArrayListExtra(Common.MO_TRACKPRICES, albumModels.get(i).getTrackPrices());
                 detail.putStringArrayListExtra(Common.MO_CURRENCYS, albumModels.get(i).getCurrencys());
+                detail.putStringArrayListExtra(Common.MO_TRACKNUMBER, albumModels.get(i).getTrackNumber());
+
+
                 context.startActivity(detail);
             }
         });

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TestTaskiTunesApi</string>
+    <string name="search_name">search_name</string>
 </resources>

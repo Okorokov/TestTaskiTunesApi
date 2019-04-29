@@ -26,4 +26,7 @@ public class Common {
 
 
     public static final String MO_PRIMARYGENRENAME = "primaryGenreName";
+    public static final String MO_TRACKNUMBER = "trackNumber";
+    public static final String MO_ALBUMTIME = "albuntime";
+    public static final String MO_TRACKCOUNT = "trackcounter";
 }

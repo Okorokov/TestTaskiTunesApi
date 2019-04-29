@@ -41,6 +41,9 @@ public class PlayListActivity extends AppCompatActivity implements MainContract.
     private RecyclerView rvTrack;
     private TrackAdapter adapter;
     private BottomSheetBehavior bottomSheetBehavior;
+    private TextView tvTrackCount;
+    private TextView tvCollectionPrice;
+
 
 
     @Override
@@ -56,6 +59,10 @@ public class PlayListActivity extends AppCompatActivity implements MainContract.
         btnPlay=(Button) findViewById(R.id.btnPlay);
         rvTrack=(RecyclerView) findViewById(R.id.rvTrack);
 
+        tvTrackCount=(TextView)findViewById(R.id.tvTrackCount);
+        tvCollectionPrice=(TextView)findViewById(R.id.tvCollectionPrice);
+
+
         Intent intent = getIntent();
         albumModel=new AlbumModel();
 
@@ -66,16 +73,23 @@ public class PlayListActivity extends AppCompatActivity implements MainContract.
         albumModel.setCollectionPrice(intent.getStringExtra(Common.MO_COLLECTIONPRICE));
 
         albumModel.setPrimaryGenreName(intent.getStringExtra(Common.MO_PRIMARYGENRENAME));
+        albumModel.setTrackCount(intent.getStringExtra(Common.MO_TRACKCOUNT));
 
         albumModel.setTrackNames(intent.getStringArrayListExtra(Common.MO_TRACKMAMES));
         albumModel.setPreviewUrls(intent.getStringArrayListExtra(Common.MO_PREVIEWURLS));
         albumModel.setTrackTimeMillis(intent.getStringArrayListExtra(Common.MO_TRACKTIMEMILLIS));
         albumModel.setTrackPrices(intent.getStringArrayListExtra(Common.MO_TRACKPRICES));
         albumModel.setCurrencys(intent.getStringArrayListExtra(Common.MO_CURRENCYS));
+        albumModel.setTrackNumber(intent.getStringArrayListExtra(Common.MO_TRACKNUMBER));
 
         tvCollectionName.setText(albumModel.getCollectionName());
         tvArtistName.setText(albumModel.getArtistName());
         tvReleaseDate.setText(albumModel.getReleaseDate());
+
+        tvTrackCount.setText(albumModel.getTrackCount());
+        tvCollectionPrice.setText(albumModel.getCollectionPrice());
+
+
         Picasso.get().load(albumModel.getArtworkUrl()).into(ivArtworkUrl);
 
 

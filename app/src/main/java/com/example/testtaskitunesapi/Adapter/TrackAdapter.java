@@ -41,6 +41,9 @@ public class TrackAdapter extends RecyclerView.Adapter<TrackAdapter.TrackViewHol
         Track track = tracks.get(i);
         trackViewHolder.tvTrackName.setText(track.getTrackName());
         trackViewHolder.tvTrackTimeMillis.setText(formatTrackTime(track.getTrackTimeMillis()));
+        trackViewHolder.tvTrackNumber.setText(String.valueOf(track.getTrackNumber()));
+        trackViewHolder.tvTrackPrice.setText(String.valueOf(track.getTrackPrice()));
+        trackViewHolder.tvCurrency.setText(track.getCurrency());
 
     }
 
@@ -61,12 +64,18 @@ public class TrackAdapter extends RecyclerView.Adapter<TrackAdapter.TrackViewHol
 
         private TextView tvTrackName;
         private TextView tvTrackTimeMillis;
+        private TextView tvTrackNumber;
+        private TextView tvTrackPrice;
+        private TextView tvCurrency;
 
 
         public TrackViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTrackName = itemView.findViewById(R.id.tvTrackName);
             tvTrackTimeMillis = itemView.findViewById(R.id.tvTrackTimeMillis);
+            tvTrackNumber = itemView.findViewById(R.id.tvTrackNumber);
+            tvTrackPrice = itemView.findViewById(R.id.tvTrackPrice);
+            tvCurrency = itemView.findViewById(R.id.tvCurrency);
 
         }
     }
