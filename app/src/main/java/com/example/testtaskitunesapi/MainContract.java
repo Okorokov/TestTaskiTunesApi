@@ -5,6 +5,7 @@ import com.example.testtaskitunesapi.Adapter.AlbumAdapter;
 public interface MainContract {
     interface View {
         void searchGet(AlbumAdapter albumAdapter);
+        void setTextSearch(String s);
     }
     interface Presenter {
         void onCreate();
@@ -12,7 +13,7 @@ public interface MainContract {
         void onStop();
         void onDestroy();
         String filterSearch(String request);
-        void search(String request);
+        void search(CharSequence request);
     }
     interface Repository {}
     interface PlayListView {}

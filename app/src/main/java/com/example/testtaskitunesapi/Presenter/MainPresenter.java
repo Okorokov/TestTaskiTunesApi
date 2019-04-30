@@ -75,11 +75,11 @@ public class MainPresenter implements MainContract.Presenter{
     }
 
     @Override
-    public void search(String request) {
+    public void search(CharSequence request) {
         mCompositedisposable = new CompositeDisposable();
         Retrofit retrofit = new RetrofitClient().getInstance(Common.BASE_URL);
         mService = retrofit.create(APIService.class);
-        mCompositedisposable.add(mService.getTracks(filterSearch(request))
+        mCompositedisposable.add(mService.getTracks(filterSearch(String.valueOf(request)))
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<TrackModel>() {

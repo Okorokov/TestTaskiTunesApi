@@ -23,8 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:mt_hint="@string/msearchbar"
-        app:mt_maxSuggestionsCount="50"
-        android:visibility="gone">
+        app:mt_maxSuggestionsCount="50">
     </com.mancj.materialsearchbar.MaterialSearchBar>
 
     <View
